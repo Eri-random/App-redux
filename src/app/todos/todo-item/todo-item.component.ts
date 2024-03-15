@@ -35,7 +35,7 @@ export class TodoItemComponent implements OnInit {
   editar(){
 
     this.txtInput.setValue(this.txtInput.value);
-    
+
     this.editando = true;
     setTimeout(() =>{
       this.txtInputFisico.nativeElement.select()
@@ -54,6 +54,10 @@ export class TodoItemComponent implements OnInit {
       texto:this.txtInput.value
     })
     )
+  }
+
+  borrar(){
+    this.store.dispatch(actions.borrar({id:this.todo.id}))
   }
 
 
